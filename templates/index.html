@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+
+{% block head %}
+<title>TASK MASTER</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Message Box</h1>
+
+    <table>
+        {% for message in messages %}
+        <tr>
+            <td>{{ message.sender }}:</td>
+            <td>{{ message.content }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Task">
+    </form>
+</div>
+{% endblock %}
